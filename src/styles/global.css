@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "GowunBatang";
+  src: url("/src/assets/Fonts/GowunBatang-Bold.ttf");
+}
+
+@font-face {
+  font-family: "GowunBatangR";
+  src: url("/src/assets/Fonts/GowunBatang-Regular.ttf");
+}

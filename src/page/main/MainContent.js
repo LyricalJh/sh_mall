@@ -1,7 +1,7 @@
 import React from "react";
 
 //compoents
-import ContentList from "./main/ContentList";
+import ContentList from "./ContentList";
 
 const MainContent = () => {
   const contents = [

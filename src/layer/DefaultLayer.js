@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import AppHeaderDropdown from "../components/header/AppHeaderDropdown";
 import AppHeader from "../components/AppHeader";
 import AppSideBar from "../components/sidebar/AppSideBar";
-import MainImage from "../page/error/main/MainImage";
-import MainContent from "../page/error/MainContent";
+import MainImage from "../page/main/MainImage";
+import MainContent from "../page/main/MainContent";
 
 const DefaultLayer = () => {
   const navigate = useNavigate();

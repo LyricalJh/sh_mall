@@ -1,8 +1,8 @@
 import React from "react";
 
-import ContentHeader from "../../../components/content/ContentHeader";
-import ContentBody from "../../../components/content/ContentBody";
-import ContentSub from "../../../components/content/ContentSub";
+import ContentHeader from "../../components/content/ContentHeader";
+import ContentBody from "../../components/content/ContentBody";
+import ContentSub from "../../components/content/ContentSub";
 
 const ContentWrapper = ({ ...rest }) => {
   const size = "460px";

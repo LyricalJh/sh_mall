@@ -32,7 +32,6 @@ const ContentSub = ({
         <span>좋아요 {like}개</span>
       </div>
       <div className="relative text-white truncate" style={{ width: size }}>
-        {/* <div>{userName}</div> */}
         <span
           className={`text-white ${
             isSubShow ? "whitespace-pre-wrap" : "block w-[300px]"

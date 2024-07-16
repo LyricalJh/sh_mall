@@ -1,7 +1,7 @@
 import React from "react";
 
 //componemt
-import SearchInput from "./input/SearchInput";
+import SearchInput from "../input/SearchInput";
 const AppHeader = () => {
   return (
     <>

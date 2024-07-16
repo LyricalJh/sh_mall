@@ -3,6 +3,14 @@ import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
+//components
+import Profile from "../../components/profile/Profile";
+import CommentList from "../../components/comment/CommentList";
+//hoc
+import withIcon from "../../components/hoc/withIcon";
+
+const ProfieWithIcon = withIcon(Profile);
+
 const Modal = ({ isOpen, setShowModal, ...props }) => {
   // 모달이 열릴 때 body의 스크롤을 비활성화하고, 닫힐 때 원래 상태로 복원
 
@@ -15,8 +23,6 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
     userName,
     weather,
   } = props;
-
-  console.log(props);
 
   useEffect(() => {
     if (isOpen) {
@@ -45,7 +51,7 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
         >
           <div className="fixed inset-0 bg-gray-900 opacity-50 z-40"></div>
           <div
-            className="rounded-lg text-white  p-8 w-full z-50 relative w-[800px] h-[500px]"
+            className="rounded-lg text-white  p-8 w-full z-50 relative w-[800px] h-[800px]"
             style={{
               backgroundColor: "#000000",
             }}
@@ -60,32 +66,19 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
             </div>
 
             <div className="flex">
-              <div className="p-2">
+              <div className="p-2 min-w-100 w-[400px]">
                 <h1>{poemTitle}</h1>
                 <pre>{poemContent}</pre>
               </div>
-              <div className="flex flex-col w-[500px]">
-                <div className="flex justify-between">
-                  <div className="flex items-center">
-                    <img
-                      className="rounded-full w-10 h-10"
-                      alt="profile"
-                      src={thumImg}
-                    />
-                    <div className="ms-5">{userName}</div>
-                  </div>
-
-                  <div className="flex items-center">
-                    <FontAwesomeIcon
-                      className="cursor-pointer"
-                      icon={faEllipsis}
-                    />
-                  </div>
-                </div>
+              <div className="p-2 flex flex-col max-w-25 w-[400px]">
+                <ProfieWithIcon userName={userName} icon={faEllipsis} />
                 <hr
                   className="my-4 border-1-2"
                   style={{ borderColor: "#262626" }}
                 />
+                <Profile imgSrc={thumImg} userName={userName} />
+                <div className="mt-2">{subMessage}</div>
+                <CommentList />
               </div>
             </div>
           </div>

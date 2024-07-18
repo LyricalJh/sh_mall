@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { faHeader } from "@fortawesome/free-solid-svg-icons";
-
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 //compoents
 import Profile from "../profile/Profile";
+import CommentFeature from "./CommentFeature";
 
 //hoc
 import withIcon from "../hoc/withIcon";
 
 const ProfieWithIcon = withIcon(Profile);
 
-const Comment = ({ userName, text }) => {
+const Comment = ({ userName, text, like }) => {
+  //TODO 나중에 서버에서 받은 값으로 useState 값 셋팅
+
+  const handleToggleIcon = () => {
+    return "hitIcon";
+  };
+
   return (
-    <div>
-      <ProfieWithIcon userName={userName} icon={faHeader} />
-      <span className="text-sm">{text}</span>
-    </div>
+    <>
+      <div className="mt-3 mb-1">
+        <ProfieWithIcon
+          userName={userName}
+          icon={faHeart}
+          handleToggleIcon={handleToggleIcon}
+        />
+        <span className="mt-2" style={{ fontSize: "0.85em" }}>
+          {text}
+        </span>
+      </div>
+      <CommentFeature />
+    </>
   );
 };
 

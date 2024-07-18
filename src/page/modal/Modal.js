@@ -6,10 +6,17 @@ import { faX, faEllipsis } from "@fortawesome/free-solid-svg-icons";
 //components
 import Profile from "../../components/profile/Profile";
 import CommentList from "../../components/comment/CommentList";
+import ContentIcons from "../../components/content/ContentIcons";
+import CommentInput from "../../components/input/CommentInput";
+
 //hoc
 import withIcon from "../../components/hoc/withIcon";
+import withFollow from "../../components/hoc/withFollow";
+import withLike from "../../components/hoc/withLike";
 
 const ProfieWithIcon = withIcon(Profile);
+const ProfileWithFollowAndIcon = withFollow(ProfieWithIcon);
+const IconswithLike = withLike(ContentIcons);
 
 const Modal = ({ isOpen, setShowModal, ...props }) => {
   // 모달이 열릴 때 body의 스크롤을 비활성화하고, 닫힐 때 원래 상태로 복원
@@ -51,7 +58,7 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
         >
           <div className="fixed inset-0 bg-gray-900 opacity-50 z-40"></div>
           <div
-            className="rounded-lg text-white  p-8 w-full z-50 relative w-[800px] h-[800px]"
+            className="rounded-lg text-white  p-8 w-full z-50 relative w-[850px] h-[600px]"
             style={{
               backgroundColor: "#000000",
             }}
@@ -61,7 +68,7 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
                 className="cursor-pointer"
                 onClick={() => setShowModal(false)}
                 icon={faX}
-                size={"md"}
+                size={"lg"}
               />
             </div>
 
@@ -70,15 +77,18 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
                 <h1>{poemTitle}</h1>
                 <pre>{poemContent}</pre>
               </div>
-              <div className="p-2 flex flex-col max-w-25 w-[400px]">
-                <ProfieWithIcon userName={userName} icon={faEllipsis} />
-                <hr
-                  className="my-4 border-1-2"
-                  style={{ borderColor: "#262626" }}
+              <div
+                className="p-2 flex flex-col max-w-25 w-[400px]"
+                style={{ borderColor: "#262626" }}
+              >
+                <ProfileWithFollowAndIcon
+                  userName={userName}
+                  icon={faEllipsis}
                 />
-                <Profile imgSrc={thumImg} userName={userName} />
-                <div className="mt-2">{subMessage}</div>
+
                 <CommentList />
+                <IconswithLike />
+                <CommentInput />
               </div>
             </div>
           </div>

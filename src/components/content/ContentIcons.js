@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,26 +10,28 @@ import {
 
 const ContentIcons = () => {
   const leftIcons = [
-    { icon: faHeart, name: "heart" },
-    { icon: faComment, name: "comment" },
-    { icon: faMessage, name: "share" },
+    { icon: faHeart, name: "heart", toggle: false, color: "bg-red-800" },
+    { icon: faComment, name: "comment", toggle: false, color: "bg-red-800" },
+    { icon: faMessage, name: "share", toggle: false, color: "bg-red-800" },
   ];
 
   const iconSize = "xl";
 
   const handlonClick = (e) => {
     const { value, name, id } = e.target;
+
     //TODO id 값을 통해서 ~ 각 아이콘 배경 색 변경해주기
   };
+
   return (
-    <div className="flex justify-between text-white mt-3">
+    <div className="flex justify-between mt-3 text-white">
       <div>
         {leftIcons.map((item, index) => (
           <span key={index}>
             <FontAwesomeIcon
               onClick={handlonClick}
               id={item.name}
-              className="me-2 cursor-pointer"
+              className={`mx-2 cursor-pointer ${item.toggle && item.color}`}
               icon={item.icon}
               size={iconSize}
             />

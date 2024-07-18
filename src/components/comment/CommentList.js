@@ -1,6 +1,6 @@
 import React from "react";
 
-import Comment from "./Comment";
+import Comet from "./Comment";
 
 //TODO postId 댓글 데이터 호출
 const CommentList = ({ postId }) => {
@@ -14,11 +14,26 @@ const CommentList = ({ postId }) => {
       userName: "dhmom.94",
       text: "상호로는 다른 집이 나와서 검색하니주소가 역전시장길 54 이고상호는 역전손칼국수인데 캡션 내용이 다 안맞네요.",
     },
+    {
+      userName: "dhmom.94",
+      text: "상호로는 다른 집이 나와서 검색하니주소가 역전시장길 54 이고상호는 역전손칼국수인데 캡션 내용이 다 안맞네요.",
+    },
+    {
+      userName: "dhmom.94",
+      text: "상호로는 다른 집이 나와서 검색하니주소가 역전시장길 54 이고상호는 역전손칼국수인데 캡션 내용이 다 안맞네요.",
+    },
   ];
 
-  return comments.map((item) => (
-    <Comment userName={item.userName} text={item.text} />
-  ));
+  return (
+    <div
+      className="overflow-auto h-[300px] mt-1 mb-2 no-scrollbar border-t-2"
+      style={{ borderColor: "#262626" }}
+    >
+      {comments.map((item, index) => (
+        <Comet key={index} userName={item.userName} text={item.text} />
+      ))}
+    </div>
+  );
 };
 
 export default CommentList;

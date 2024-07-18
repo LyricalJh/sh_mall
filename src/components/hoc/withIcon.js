@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -10,11 +10,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const withIcon = (Component) => {
   return (props) => {
+    const [like, setLike] = useState(false);
+
+    const handleClickIcon = () => {
+      if (props.handleToggleIcon) {
+        const message = props?.handleToggleIcon();
+
+        if (message === "hitIcon") {
+          setLike((pre) => !pre);
+        }
+      }
+    };
+
     return (
       <div className="flex justify-between">
         <Component {...props} />
         <div className="flex items-center">
-          <FontAwesomeIcon className="cursor-pointer" icon={props.icon} />
+          <FontAwesomeIcon
+            className={`cursor-pointer ${like && "text-red-600"}`}
+            icon={props.icon}
+            onClick={handleClickIcon}
+          />
         </div>
       </div>
     );

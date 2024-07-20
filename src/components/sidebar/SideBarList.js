@@ -8,6 +8,11 @@ import SideBarItem from "./SideBarItem";
 const SideBarList = ({ listData }) => {
   return (
     <div className="felx flex-col h-full">
+      <div className="flex items-center justify-center mt-10">
+        <h2 className="font-[GowunBatang] text-2xl text-[#F5F5F5]">
+          오늘의 시톡
+        </h2>
+      </div>
       {listData.map((item, index) => (
         <SideBarItem key={index} {...item} />
       ))}

@@ -36,19 +36,18 @@ const SearchInput = () => {
   return (
     <div className="relative">
       <FontAwesomeIcon
-        className="absolute"
+        className="absolute text-[#8E8E8E]"
         icon={faMagnifyingGlass}
-        style={{ top: "6.5px", left: "10px" }}
-        size="lg"
+        style={{ top: "12.5px", left: "10px", fontSize: "1em" }}
       />
       {click && (
         <div
           className="absolute rounded-full w-3 h-3 flex items-center justify-center p-2 cursor-pointer text-white"
-          style={{ top: "7.5px", right: "15px", backgroundColor: "#C7C7C7" }}
+          style={{ top: "12.5px", right: "15px", backgroundColor: "#C7C7C7" }}
           onClick={() => handleClick(false)}
         >
           <FontAwesomeIcon
-            className="text-black"
+            className="text-[#262626]"
             style={{ fontSize: "0.5em" }}
             icon={faX}
             onClick={() => handleClick(false)}
@@ -58,7 +57,7 @@ const SearchInput = () => {
 
       <input
         ref={inputRef}
-        className="rounded p-1 px-10 py-1 focus:outline-none"
+        className="rounded bg-[#262626] text-[#F5F5F5] p-1 px-10 py-2 focus:outline-none"
         onClick={() => handleClick(true)}
         value={search}
         onChange={handleSearch}

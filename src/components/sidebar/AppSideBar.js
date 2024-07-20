@@ -19,10 +19,9 @@ const AppSideBar = () => {
 
   return (
     <div
-      className={`fixed h-full left-0 back bg-slate-950 z-40 border-r-2 ${
+      className={`fixed h-full left-0 back bg-[#000000] border-[#262626] z-40 border-r-2 ${
         isToggle ? "w-20" : "w-0"
       }`}
-      style={{ backgroundColor: "#000000", borderColor: "#262626" }}
     >
       <SideBarList listData={listItems} />
     </div>

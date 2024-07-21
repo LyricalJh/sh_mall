@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
 
-const SearchInput = () => {
+const SearchInput = ({ xSize }) => {
   const [search, setSearch] = useState("");
   const [click, setClick] = useState(false);
 
@@ -38,7 +38,7 @@ const SearchInput = () => {
       <FontAwesomeIcon
         className="absolute text-[#8E8E8E]"
         icon={faMagnifyingGlass}
-        style={{ top: "12.5px", left: "10px", fontSize: "1em" }}
+        style={{ top: "12.5px", left: "18px", fontSize: "1em" }}
       />
       {click && (
         <div
@@ -57,7 +57,7 @@ const SearchInput = () => {
 
       <input
         ref={inputRef}
-        className="rounded bg-[#262626] text-[#F5F5F5] p-1 px-10 py-2 focus:outline-none"
+        className="rounded bg-[#262626] text-[#F5F5F5] p-1 px-14 py-2 focus:outline-none"
         onClick={() => handleClick(true)}
         value={search}
         onChange={handleSearch}

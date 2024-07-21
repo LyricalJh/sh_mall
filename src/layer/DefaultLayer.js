@@ -9,49 +9,42 @@ import MainContent from "../page/main/MainContent";
 import AppFooter from "../components/footer/AppFooter";
 
 const DefaultLayer = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
-  const appSideRef = useRef(null);
-  const searhSideRef = useRef(null);
+  const appBodyRef = useRef(null);
 
-  const clickOnSearch = () => {
+  const handleClickOnSearch = () => {
     setIsOpen((pre) => !pre);
+  };
+
+  const handleClickOnIcon = (url) => {
+    navigate(url);
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        searhSideRef.current &&
-        !searhSideRef.current.contains(event.target) &&
-        appSideRef.current &&
-        !appSideRef.current.contains(event.target)
-      ) {
+      if (appBodyRef.current && appBodyRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);
+  });
 
   return (
     <>
       <div className="hidden lg:block">
-        <AppSideBar clickOnSearch={clickOnSearch} appSideRef={appSideRef} />
-        <SearchSideBar
-          isOpen={isOpen}
-          onClose={setIsOpen}
-          searhSideRef={searhSideRef}
+        <AppSideBar
+          handleClickOnSearch={handleClickOnSearch}
+          handleClickOnIcon={handleClickOnIcon}
         />
+        <SearchSideBar isOpen={isOpen} onClose={setIsOpen} />
       </div>
-      <div className="lg:ml-20">
+      <div ref={appBodyRef} className="lg:ml-20">
         <div className="lg:hidden">
           <AppHeader />
         </div>

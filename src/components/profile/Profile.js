@@ -1,17 +1,21 @@
 import React from "react";
 
-const Profile = ({ imgSrc, userName }) => {
+const Profile = ({
+  imgSrc = "https://blog.kakaocdn.net/dn/2dH4s/btrKdQdNChV/nV2c3jpSHnjXxaktdvcYL0/img.webp",
+  userName,
+  subCompoent,
+  data,
+}) => {
+  const Sub = subCompoent;
+
   return (
     <>
       <div className="flex items-center mb-2">
-        <img
-          className="rounded-full w-10 h-10"
-          alt="profile"
-          src={
-            "https://p16-capcut-sign-va.ibyteimg.com/tos-alisg-v-643f9f/oUFzwgzAAIyAfAzEvINBWl3UmJY4YrXbBhAlCE~tplv-nhvfeczskr-1:250:0.webp?lk3s=44acef4b&x-expires=1737485910&x-signature=KzZgXA791aZcBdxVNPQfB5kdAzI%3D"
-          }
-        />
-        <div className="ms-2 text-sm">{userName}</div>
+        <img className="rounded-full w-10 h-10" alt="profile" src={imgSrc} />
+        <div className="d-flex flex-col">
+          <div className="ms-2 text-sm">{userName}</div>
+          {subCompoent && <Sub data={"팔로잉중..."} />}
+        </div>
       </div>
     </>
   );

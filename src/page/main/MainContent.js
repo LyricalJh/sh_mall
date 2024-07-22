@@ -29,11 +29,10 @@ const MainContent = () => {
   `,
       like: 999,
       subMessage: `erin_myway
-  #OPEN #메이드미 #최대50%할인
-  저랑 제친구들은 다 쓰고 있는 메이드미
-  
-  친구들 요청으로 시작된 공구
-  벌써 3차 공구 입니다`,
+#OPEN #메이드미 #최대50%할인
+저랑 제친구들은 다 쓰고 있는 메이드미
+친구들 요청으로 시작된 공구
+벌써 3차 공구 입니다`,
       comments: [
         { userName: "wndgks49", text: "오늘도 멋진 시 정말 멋져요!" },
         { userName: "wndgks49", text: "오늘도 멋진 시 정말 멋져요!" },
@@ -91,11 +90,10 @@ const MainContent = () => {
   `,
       like: 999,
       subMessage: `erin_myway
-  #OPEN #메이드미 #최대50%할인
-  저랑 제친구들은 다 쓰고 있는 메이드미
-  
-  친구들 요청으로 시작된 공구
-  벌써 3차 공구 입니다`,
+#OPEN #메이드미 #최대50%할인
+저랑 제친구들은 다 쓰고 있는 메이드미
+친구들 요청으로 시작된 공구
+벌써 3차 공구 입니다`,
       comments: [
         { userName: "wndgks49", text: "오늘도 멋진 시 정말 멋져요!" },
         { userName: "skan4342", text: "오늘도 멋진 시 정말 멋져요!" },

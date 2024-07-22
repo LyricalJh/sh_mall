@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX, faEllipsis } from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +20,7 @@ const IconswithLike = withLike(ContentIcons);
 
 const Modal = ({ isOpen, setShowModal, ...props }) => {
   // 모달이 열릴 때 body의 스크롤을 비활성화하고, 닫힐 때 원래 상태로 복원
+  const backGroundRef = useRef(null);
 
   const {
     comments,
@@ -43,8 +44,8 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
   }, [isOpen]);
 
   // 백드롭 클릭 시 모달을 닫기 위해 이벤트를 막음
-  const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
+  const handleBackdropClick = (event) => {
+    if (backGroundRef.current && backGroundRef.current.contains(event.target)) {
       setShowModal(false);
     }
   };
@@ -56,9 +57,12 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
           className="fixed inset-0 flex items-center justify-center z-50"
           onClick={handleBackdropClick}
         >
-          <div className="fixed inset-0 bg-gray-900 opacity-50 z-40"></div>
           <div
-            className="rounded-lg text-white  p-8 w-full z-50 relative w-[850px] h-[600px]"
+            ref={backGroundRef}
+            className="fixed inset-0 bg-gray-900 opacity-50 z-40"
+          ></div>
+          <div
+            className="rounded-lg text-white p-8 z-50 relative w-[450px] h-[600px] lg:w-[850px] "
             style={{
               backgroundColor: "#000000",
             }}
@@ -72,8 +76,8 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
               />
             </div>
 
-            <div className="flex">
-              <div className="p-2 min-w-100 w-[400px]">
+            <div className="flex ">
+              <div className="hidden lg:block p-2 min-w-100 w-[400px]">
                 <h1>{poemTitle}</h1>
                 <pre>{poemContent}</pre>
               </div>
@@ -81,7 +85,8 @@ const Modal = ({ isOpen, setShowModal, ...props }) => {
                 className="p-2 flex flex-col max-w-25 w-[400px]"
                 style={{ borderColor: "#262626" }}
               >
-                <ProfileWithFollowAndIcon
+                <ProfieWithIcon
+                  isFollow={true}
                   userName={userName}
                   icon={faEllipsis}
                 />

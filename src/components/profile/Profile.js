@@ -11,7 +11,7 @@ const IsFollow = () => {
     </div>
   );
 };
-
+//TODO 안티패턴 제거
 const Profile = ({
   imgSrc = "https://blog.kakaocdn.net/dn/2dH4s/btrKdQdNChV/nV2c3jpSHnjXxaktdvcYL0/img.webp",
   userName,

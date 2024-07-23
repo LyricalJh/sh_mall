@@ -54,7 +54,10 @@ const SearchList = () => {
         <NoDataContent />
       ) : (
         searchDatas.map((item, index) => (
-          <div className="flex items-center justify-start my-2 ms-5">
+          <div
+            key={index}
+            className="flex items-center justify-start my-2 ms-5"
+          >
             <Profile
               imgSrc={item.img}
               data={"팔로잉중..."}

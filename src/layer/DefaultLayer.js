@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import AppHeader from "../components/header/AppHeader";
 import AppSideBar from "../components/sidebar/AppSideBar";
 import SearchSideBar from "../components/sidebar/SearchSideBar";
-import MainContent from "../page/main/MainContent";
+import AppContent from "../page/main/AppContent";
 import AppFooter from "../components/footer/AppFooter";
 
 const DefaultLayer = () => {
@@ -48,7 +48,11 @@ const DefaultLayer = () => {
         <div className="lg:hidden">
           <AppHeader />
         </div>
-        <MainContent />
+
+        <div className="lg:ml-20">
+          <AppContent />
+        </div>
+
         <div className="lg:hidden">
           <AppFooter />
         </div>

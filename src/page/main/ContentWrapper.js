@@ -1,5 +1,6 @@
 import React from "react";
 
+//component
 import ContentHeader from "../../components/content/ContentHeader";
 import ContentBody from "../../components/content/ContentBody";
 import ContentSub from "../../components/content/ContentSub";

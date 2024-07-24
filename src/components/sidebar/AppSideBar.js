@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 //component
-import SearchSideBar from "./SearchSideBar";
 import SideBarList from "./SideBarList";
 
 const AppSideBar = ({ handleClickOnSearch, handleClickOnIcon }) => {

@@ -3,6 +3,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 //swr
 import { SWRConfig } from "swr";
 import DefaultLayer from "./layer/DefaultLayer";
+import Login from "./page/login/Login";
 
 //TODO 로딩 페이지 제작 framer_motion 애니메이션으로 개발
 const loadingPage = <div>Loading....</div>;
@@ -23,6 +24,12 @@ const App = () => {
         <HashRouter>
           <Suspense fallback={loadingPage}>
             <Routes>
+              <Route
+                exact
+                path="/login"
+                name="Login Page"
+                element={<Login />}
+              />
               <Route exact path="/404" name="Page 404" element={<Page404 />} />
               <Route exact path="/500" name="Page 500" element={<Page500 />} />
               <Route path="*" name="Home" element={<DefaultLayer />} />

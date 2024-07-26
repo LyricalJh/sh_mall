@@ -3,6 +3,8 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 //swr
 import { SWRConfig } from "swr";
 import DefaultLayer from "./layer/DefaultLayer";
+
+//compoents
 import Login from "./page/login/Login";
 
 //TODO 로딩 페이지 제작 framer_motion 애니메이션으로 개발

@@ -6,6 +6,7 @@ const Page404 = React.lazy(() => import("./page/error/Page404"));
 
 //컴포넌트 routes 배열에 추가해서 컴포넌트 넣을것
 const routes = [
+  //회원가입
   //main
   { path: "/", name: "메인화면", element: ContentList },
   //profile

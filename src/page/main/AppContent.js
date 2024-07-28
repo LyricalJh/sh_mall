@@ -8,6 +8,7 @@ import routes from "../../routes";
 //TODO 기깔 나는 로딩 페이지 만들기 혹은 스켈레톤 이미지 로딩 사용할 수도 있음.
 
 const AppContent = () => {
+  console.log("app content here");
   return (
     <div className="min-h-screen bg-[#000000]">
       <Suspense fallback={<div>loading...</div>}>

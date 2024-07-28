@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 //hoc
-import withHeader from "../../components/hoc/withHeader";
+import withHeader from "../../../components/hoc/withHeader";
 
 //compoent
-import LoginBtn from "../../components/button/LoginBtn";
-import DefaultInput from "../../components/input/DefaultInput";
-import AuthBtn from "../../components/button/AuthBtn";
+import LoginBtn from "../../../components/button/LoginBtn";
+import DefaultInput from "../../../components/input/DefaultInput";
+import AuthBtn from "../../../components/button/AuthBtn";
 
 const AuthBtnsWithHeader = withHeader(AuthBtn);
 

@@ -11,3 +11,14 @@ export const useLogin = (arg) => {
   );
   return { trigger, isMutating, data, error, reset, onError };
 };
+
+export const useSocailLogin = (arg) => {
+  const fetcher = (url, { arg }) =>
+    axiosSpring.post(url, arg).then((data) => data);
+
+  const { trigger, isMutating, data, error, reset, onError } = useSWRMutation(
+    "/oauth/kakao",
+    fetcher
+  );
+  return { trigger, isMutating, data, error, reset, onError };
+};

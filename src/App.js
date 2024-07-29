@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes, BrowserRouter } from "react-router-dom";
 //swr
 import { SWRConfig } from "swr";
 import DefaultLayer from "./layer/DefaultLayer";
@@ -24,7 +24,7 @@ const App = () => {
           revalidateOnMount: true,
         }}
       >
-        <HashRouter>
+        <BrowserRouter>
           <Suspense fallback={loadingPage}>
             <Routes>
               <Route
@@ -33,18 +33,12 @@ const App = () => {
                 name="Login Page"
                 element={<Login />}
               />
-              {/* <Route
-                exact
-                path="/users/kakao/login"
-                name="Login Page"
-                element={<KakaoLogin />}
-              /> */}
               <Route exact path="/404" name="Page 404" element={<Page404 />} />
               <Route exact path="/500" name="Page 500" element={<Page500 />} />
               <Route path="*" name="Home" element={<DefaultLayer />} />
             </Routes>
           </Suspense>
-        </HashRouter>
+        </BrowserRouter>
       </SWRConfig>
     </>
   );

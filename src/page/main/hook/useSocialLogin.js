@@ -18,7 +18,6 @@ export const useSocialLogin = () => {
     const searchParams = new URLSearchParams(location.search);
     console.log(searchParams);
     const code = searchParams.get("code");
-    console.log("check code", code);
 
     postCodeToServer(code);
   }, []);

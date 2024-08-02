@@ -11,6 +11,7 @@ export const useSocialLogin = () => {
 
   const postCodeToServer = async (code) => {
     const response = await login(code);
+    console.log("check response: ", response);
     setResponse(response);
   };
 

@@ -14,7 +14,7 @@ const AppFooter = () => {
   //TODO React router dom 라이브러리로 해당 url 이동
   const navigate = useNavigate();
   const footerItems = [
-    { icon: faHome, url: "" },
+    { icon: faHome, url: "/" },
     { icon: faCompass, url: "" },
     { icon: faComment, url: "" },
     { icon: faUser, url: "" },

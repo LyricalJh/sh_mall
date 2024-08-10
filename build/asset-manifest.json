@@ -1,10 +1,23 @@
 {
   "files": {
-    "main.js": "/static/js/main.910c50c4.js",
+    "main.css": "/static/css/main.b07683bb.css",
+    "main.js": "/static/js/main.679cb7e2.js",
+    "static/js/890.c22b79f5.chunk.js": "/static/js/890.c22b79f5.chunk.js",
+    "static/js/45.daae93d8.chunk.js": "/static/js/45.daae93d8.chunk.js",
+    "static/js/67.b49ef499.chunk.js": "/static/js/67.b49ef499.chunk.js",
+    "static/js/780.ab7dfde1.chunk.js": "/static/js/780.ab7dfde1.chunk.js",
+    "static/media/GowunBatang-Regular.ttf": "/static/media/GowunBatang-Regular.6b610213de9843984042.ttf",
+    "static/media/GowunBatang-Bold.ttf": "/static/media/GowunBatang-Bold.82d915ec1fdc538849a6.ttf",
     "index.html": "/index.html",
-    "main.910c50c4.js.map": "/static/js/main.910c50c4.js.map"
+    "main.b07683bb.css.map": "/static/css/main.b07683bb.css.map",
+    "main.679cb7e2.js.map": "/static/js/main.679cb7e2.js.map",
+    "890.c22b79f5.chunk.js.map": "/static/js/890.c22b79f5.chunk.js.map",
+    "45.daae93d8.chunk.js.map": "/static/js/45.daae93d8.chunk.js.map",
+    "67.b49ef499.chunk.js.map": "/static/js/67.b49ef499.chunk.js.map",
+    "780.ab7dfde1.chunk.js.map": "/static/js/780.ab7dfde1.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.910c50c4.js"
+    "static/css/main.b07683bb.css",
+    "static/js/main.679cb7e2.js"
   ]
 }

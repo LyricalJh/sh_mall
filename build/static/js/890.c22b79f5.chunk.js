@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshop=self.webpackChunkshop||[]).push([[890],{890:(s,e,h)=>{h.r(e),h.d(e,{default:()=>c});h(43);var a=h(579);const c=()=>(0,a.jsx)(a.Fragment,{children:(0,a.jsx)("div",{children:"this is page 404 "})})}}]);
+//# sourceMappingURL=890.c22b79f5.chunk.js.map

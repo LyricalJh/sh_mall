@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshop=self.webpackChunkshop||[]).push([[45],{45:(s,e,h)=>{h.r(e),h.d(e,{default:()=>c});h(43);var a=h(579);const c=()=>(0,a.jsx)(a.Fragment,{children:(0,a.jsx)("div",{children:"this is page 500"})})}}]);
+//# sourceMappingURL=45.daae93d8.chunk.js.map

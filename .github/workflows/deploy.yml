@@ -22,7 +22,7 @@ jobs:
       - name: React build
         run: |
           yarn install
-          yarn build
+          CI=false yarn build
 
       - name: S3 기존 파일들 전체 삭제 후 새로 업로드
         run: |

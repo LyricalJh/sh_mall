@@ -19,10 +19,15 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+      - name: React build
+        run: |
+          yarn install
+          yarn build
+
       - name: S3 기존 파일들 전체 삭제 후 새로 업로드
         run: |
           aws s3 rm --recursive s3://sitalk-web-page
-          aws s3 cp ./ s3://sitalk-web-page/ --recursive
+          aws s3 cp build/ s3://sitalk-web-page/ --recursive
 
       - name: Cloudfront 캐시 무효화
         run: aws cloudfront create-invalidation --distribution-id EXCQNSUDTF6V4 --paths "/*"
